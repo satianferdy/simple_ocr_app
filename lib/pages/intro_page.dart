@@ -7,15 +7,70 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          // logo
-          children: [],
-          // title app
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // logo
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Image.asset(
+                  'assets/images/introImg.png',
+                  height: 263,
+                ),
+              ),
 
-          // subtitle app
+              const SizedBox(height: 48),
 
-          // start button
+              // title app
+              const Text(
+                'Find Work',
+                style: TextStyle(
+                  color: Color.fromRGBO(24, 16, 89, 1),
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+
+              const SizedBox(height: 24),
+
+              // subtitle app
+              const Opacity(
+                opacity: 0.5,
+                child: Text(
+                  'Unleash Your Potential with Workplace Options Tailored to Your Location.',
+                  style: TextStyle(
+                    color: Color.fromRGBO(24, 16, 89, 1),
+                    fontSize: 16,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+
+              const SizedBox(height: 48),
+
+              // start button
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromRGBO(24, 16, 89, 1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding: const EdgeInsets.all(24),
+                child: const Center(
+                  child: Text(
+                    'Start Now',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
