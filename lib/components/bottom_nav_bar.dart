@@ -9,31 +9,31 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: GNav(
-        color: Colors.grey[500],
-        activeColor: Colors.grey.shade700,
+        color: Color.fromRGBO(24, 16, 89, 1),
+        activeColor: Color.fromRGBO(24, 16, 89, 1),
         tabActiveBorder: Border.all(color: Colors.white),
-        tabBackgroundColor: Colors.grey.shade100,
-        mainAxisAlignment: MainAxisAlignment.center,
+        tabBackgroundColor: Colors.white,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         tabBorderRadius: 24,
         onTabChange: (value) => onTabChange(value),
         tabs: const [
           GButton(
             icon: Icons.home,
-            text: 'Home',
+            // text: 'Home',
           ),
           GButton(
             icon: Icons.work,
-            text: 'Workplace',
+            // text: 'Workplace',
           ),
           GButton(
             icon: Icons.notifications,
-            text: 'Notifications',
+            // text: 'Notifications',
           ),
           GButton(
             icon: Icons.person,
-            text: 'Profile',
+            // text: 'Profile',
           ),
         ],
       ),
