@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_ocr_app/pages/main_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -52,19 +53,27 @@ class IntroPage extends StatelessWidget {
               const SizedBox(height: 48),
 
               // start button
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromRGBO(24, 16, 89, 1),
-                  borderRadius: BorderRadius.circular(12),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainPage(),
+                  ),
                 ),
-                padding: const EdgeInsets.all(24),
-                child: const Center(
-                  child: Text(
-                    'Start Now',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromRGBO(24, 16, 89, 1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.all(24),
+                  child: const Center(
+                    child: Text(
+                      'Start Now',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

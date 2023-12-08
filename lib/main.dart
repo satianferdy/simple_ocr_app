@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:simple_ocr_app/pages/intro_page.dart';
-import 'package:simple_ocr_app/pages/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: IntroPage(),
     );
   }
 }
