@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_ocr_app/helper/my_color.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -6,7 +7,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -28,11 +29,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.home,
-                    color: Colors.white,
+                    color: MyColor.darkBlue,
                   ),
                   title: Text(
-                    'home',
-                    style: TextStyle(color: Colors.white),
+                    'Home',
+                    style: TextStyle(color: MyColor.darkBlue),
                   ),
                 ),
               ),
@@ -41,12 +42,40 @@ class MyDrawer extends StatelessWidget {
                 padding: EdgeInsets.only(left: 25),
                 child: ListTile(
                   leading: Icon(
-                    Icons.info,
-                    color: Colors.white,
+                    Icons.place,
+                    color: MyColor.darkBlue,
                   ),
                   title: Text(
-                    'about',
-                    style: TextStyle(color: Colors.white),
+                    'Workplace',
+                    style: TextStyle(color: MyColor.darkBlue),
+                  ),
+                ),
+              ),
+
+              const Padding(
+                padding: EdgeInsets.only(left: 25),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.notifications,
+                    color: MyColor.darkBlue,
+                  ),
+                  title: Text(
+                    'Notifications',
+                    style: TextStyle(color: MyColor.darkBlue),
+                  ),
+                ),
+              ),
+
+              const Padding(
+                padding: EdgeInsets.only(left: 25),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.person,
+                    color: MyColor.darkBlue,
+                  ),
+                  title: Text(
+                    'Profile',
+                    style: TextStyle(color: MyColor.darkBlue),
                   ),
                 ),
               ),
@@ -57,11 +86,11 @@ class MyDrawer extends StatelessWidget {
             child: ListTile(
               leading: Icon(
                 Icons.logout,
-                color: Colors.white,
+                color: MyColor.darkBlue,
               ),
               title: Text(
-                'logout',
-                style: TextStyle(color: Colors.white),
+                'Logout',
+                style: TextStyle(color: MyColor.darkBlue),
               ),
             ),
           ),

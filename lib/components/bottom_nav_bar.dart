@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:simple_ocr_app/helper/my_color.dart';
 
 // ignore: must_be_immutable
 class MyBottomNavBar extends StatelessWidget {
@@ -9,31 +10,37 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 12,
+            color: Colors.grey,
+          ),
+        ],
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: GNav(
-        color: Color.fromRGBO(24, 16, 89, 1),
-        activeColor: Color.fromRGBO(24, 16, 89, 1),
-        tabActiveBorder: Border.all(color: Colors.white),
-        tabBackgroundColor: Colors.white,
+        color: MyColor.darkBlue.withOpacity(0.6),
+        activeColor: MyColor.darkBlue,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        tabBorderRadius: 24,
         onTabChange: (value) => onTabChange(value),
         tabs: const [
           GButton(
-            icon: Icons.home,
-            // text: 'Home',
+            icon: Icons.home_outlined,
+            iconSize: 32,
           ),
           GButton(
-            icon: Icons.work,
-            // text: 'Workplace',
+            icon: Icons.history_outlined,
+            iconSize: 32,
           ),
           GButton(
-            icon: Icons.notifications,
-            // text: 'Notifications',
+            icon: Icons.notifications_outlined,
+            iconSize: 32,
           ),
           GButton(
-            icon: Icons.person,
-            // text: 'Profile',
+            icon: Icons.person_outline,
+            iconSize: 32,
           ),
         ],
       ),
