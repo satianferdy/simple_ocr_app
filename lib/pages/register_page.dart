@@ -156,7 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 20),
 
               // register button
               MyButton(

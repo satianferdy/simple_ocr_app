@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:simple_ocr_app/helper/my_color.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
+
+  void logout() {
+    FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +29,21 @@ class MyDrawer extends StatelessWidget {
               const SizedBox(height: 48),
 
               // other pages
-              const Padding(
-                padding: EdgeInsets.only(left: 25),
+              Padding(
+                padding: const EdgeInsets.only(left: 25),
                 child: ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.home,
                     color: Colors.white,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Home',
                     style: TextStyle(color: Colors.white),
                   ),
+                  onTap: () {
+                    // this is already the home screen so just close the drawer
+                    Navigator.pop(context);
+                  },
                 ),
               ),
 
@@ -81,17 +90,24 @@ class MyDrawer extends StatelessWidget {
               ),
             ],
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 25, bottom: 25),
             child: ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.logout,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 'Logout',
                 style: TextStyle(color: Colors.white),
               ),
+              onTap: () {
+                // logout
+                Navigator.pop(context);
+
+                // logout
+                logout();
+              },
             ),
           ),
         ],
