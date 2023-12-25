@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_ocr_app/pages/main_page.dart';
+import 'package:simple_ocr_app/auth/auth.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -57,7 +57,7 @@ class IntroPage extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const MainPage(),
+                    builder: (context) => const AuthPage(),
                   ),
                 ),
                 child: Container(
