@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893746203116",
+    "project_id": "room-loans-app",
+    "storage_bucket": "room-loans-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893746203116:android:7036948effd0efafa598c9",
+        "android_client_info": {
+          "package_name": "com.example.simple_ocr_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893746203116-cu1efqevug54vjbms801rt258627cjqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkQ1TmibkfA3joWiiZyO5fAPLypGcvpiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893746203116-cu1efqevug54vjbms801rt258627cjqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

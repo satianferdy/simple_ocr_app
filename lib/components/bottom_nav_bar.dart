@@ -11,7 +11,10 @@ class MyBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: MyColor.darkBlue,
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(24),
+        ),
         boxShadow: [
           BoxShadow(
             blurRadius: 12,
@@ -21,8 +24,10 @@ class MyBottomNavBar extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: GNav(
-        color: MyColor.darkBlue.withOpacity(0.6),
-        activeColor: MyColor.darkBlue,
+        // color: MyColor.darkBlue.withOpacity(0.6),
+        // activeColor: MyColor.darkBlue,
+        color: Colors.grey,
+        activeColor: Colors.white,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         onTabChange: (value) => onTabChange(value),
         tabs: const [

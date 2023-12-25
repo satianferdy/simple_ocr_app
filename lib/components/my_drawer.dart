@@ -7,7 +7,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.white,
+      backgroundColor: MyColor.darkBlue,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -16,8 +16,8 @@ class MyDrawer extends StatelessWidget {
             children: [
               DrawerHeader(
                 child: Image.asset(
-                  'assets/images/logo.png',
-                  // color: Colors.white,
+                  'assets/images/mylogo.png',
+                  width: 80,
                 ),
               ),
 
@@ -29,11 +29,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.home,
-                    color: MyColor.darkBlue,
+                    color: Colors.white,
                   ),
                   title: Text(
                     'Home',
-                    style: TextStyle(color: MyColor.darkBlue),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -43,11 +43,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.place,
-                    color: MyColor.darkBlue,
+                    color: Colors.white,
                   ),
                   title: Text(
                     'Workplace',
-                    style: TextStyle(color: MyColor.darkBlue),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -57,11 +57,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.notifications,
-                    color: MyColor.darkBlue,
+                    color: Colors.white,
                   ),
                   title: Text(
                     'Notifications',
-                    style: TextStyle(color: MyColor.darkBlue),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -71,11 +71,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.person,
-                    color: MyColor.darkBlue,
+                    color: Colors.white,
                   ),
                   title: Text(
                     'Profile',
-                    style: TextStyle(color: MyColor.darkBlue),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -86,11 +86,11 @@ class MyDrawer extends StatelessWidget {
             child: ListTile(
               leading: Icon(
                 Icons.logout,
-                color: MyColor.darkBlue,
+                color: Colors.white,
               ),
               title: Text(
                 'Logout',
-                style: TextStyle(color: MyColor.darkBlue),
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ),
