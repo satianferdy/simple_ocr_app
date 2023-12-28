@@ -14,34 +14,51 @@ class IntroPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // text
+              const Text(
+                'Anda bingung ingin meminjam ruang kelas tapi harus pinjam ke siapa?',
+                style: TextStyle(
+                  color: Color.fromRGBO(24, 16, 89, 1),
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
+
+              const SizedBox(height: 24),
+
               // logo
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Image.asset(
-                  'assets/images/introImg.png',
+                  'assets/images/splash.png',
                   height: 263,
                 ),
               ),
 
-              const SizedBox(height: 48),
+              const SizedBox(height: 12),
 
-              // title app
-              const Text(
-                'Find Work',
-                style: TextStyle(
-                  color: Color.fromRGBO(24, 16, 89, 1),
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900,
-                ),
+              // text logo
+              Image.asset(
+                'assets/images/text.png',
+                height: 32,
               ),
 
-              const SizedBox(height: 24),
+              // const Text(
+              //   'Find Work',
+              //   style: TextStyle(
+              //     color: Color.fromRGBO(24, 16, 89, 1),
+              //     fontSize: 24,
+              //     fontWeight: FontWeight.w900,
+              //   ),
+              // ),
+
+              const SizedBox(height: 32),
 
               // subtitle app
               const Opacity(
                 opacity: 0.5,
                 child: Text(
-                  'Unleash Your Potential with Workplace Options Tailored to Your Location.',
+                  'Membantu anda untuk mencari dan meminjam ruangan kelas dengan mudah  dalam waktu dekat.',
                   style: TextStyle(
                     color: Color.fromRGBO(24, 16, 89, 1),
                     fontSize: 16,

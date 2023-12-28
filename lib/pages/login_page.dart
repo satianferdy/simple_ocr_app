@@ -62,23 +62,19 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               // logo
               Image.asset(
-                "assets/images/mylogo.png",
+                "assets/images/logoo.png",
                 width: 100,
-                color: MyColor.darkBlue,
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 12),
 
               // app name
-              const Text(
-                'B O R O O M S',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: MyColor.darkBlue,
-                ),
+              Image.asset(
+                'assets/images/text.png',
+                height: 32,
               ),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 48),
 
               // email textfield
               MyTextField(

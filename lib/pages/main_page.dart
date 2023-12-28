@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_ocr_app/components/bottom_nav_bar.dart';
 import 'package:simple_ocr_app/components/my_drawer.dart';
-import 'package:simple_ocr_app/helper/my_color.dart';
 import 'package:simple_ocr_app/pages/home_page.dart';
 import 'package:simple_ocr_app/pages/notif_page.dart';
 import 'package:simple_ocr_app/pages/profile_page.dart';
@@ -29,7 +28,7 @@ class _MainPageState extends State<MainPage> {
   // pages to display
   final List<Widget> pages = [
     // home page
-    const HomePage(),
+    HomePage(),
 
     // workplace page
     const WorkplacePage(),

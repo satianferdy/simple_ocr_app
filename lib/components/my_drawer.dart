@@ -12,7 +12,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: MyColor.darkBlue,
+      backgroundColor: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -21,7 +21,7 @@ class MyDrawer extends StatelessWidget {
             children: [
               DrawerHeader(
                 child: Image.asset(
-                  'assets/images/mylogo.png',
+                  'assets/images/logoo.png',
                   width: 80,
                 ),
               ),
@@ -34,11 +34,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(
                     Icons.home,
-                    color: Colors.white,
+                    color: MyColor.darkBlue,
                   ),
                   title: const Text(
                     'Home',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: MyColor.darkBlue),
                   ),
                   onTap: () {
                     // this is already the home screen so just close the drawer
@@ -52,11 +52,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.place,
-                    color: Colors.white,
+                    color: MyColor.darkBlue,
                   ),
                   title: Text(
                     'Workplace',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: MyColor.darkBlue),
                   ),
                 ),
               ),
@@ -66,11 +66,11 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.notifications,
-                    color: Colors.white,
+                    color: MyColor.darkBlue,
                   ),
                   title: Text(
                     'Notifications',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: MyColor.darkBlue),
                   ),
                 ),
               ),
@@ -80,26 +80,26 @@ class MyDrawer extends StatelessWidget {
                 child: ListTile(
                   leading: Icon(
                     Icons.person,
-                    color: Colors.white,
+                    color: MyColor.darkBlue,
                   ),
                   title: Text(
                     'Profile',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: MyColor.darkBlue),
                   ),
                 ),
               ),
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(left: 25, bottom: 25),
+            padding: const EdgeInsets.only(left: 25, bottom: 25),
             child: ListTile(
               leading: const Icon(
                 Icons.logout,
-                color: Colors.white,
+                color: MyColor.darkBlue,
               ),
               title: const Text(
                 'Logout',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: MyColor.darkBlue),
               ),
               onTap: () {
                 // logout

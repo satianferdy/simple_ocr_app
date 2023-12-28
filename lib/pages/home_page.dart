@@ -1,8 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_ocr_app/components/my_rooms_box.dart';
 import 'package:simple_ocr_app/helper/my_color.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  // firebase auth instance
+  // final FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -81,70 +86,39 @@ class HomePage extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          Padding(
-            padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
-            child: Container(
-              decoration: const BoxDecoration(
-                color: MyColor.darkBlue,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(15),
-                ),
-              ),
-              padding: EdgeInsets.all(24),
-              height: 120,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // image
-                  const Center(
-                    child: Image(
-                      image: AssetImage("assets/images/mylogo.png"),
-                      color: Colors.white,
-                      width: 60,
-                    ),
-                  ),
+          // rooms box
+          Expanded(
+              child: StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance.collection('rooms').snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              if (snapshot.hasError) {
+                return Center(
+                  child: Text('Error: ${snapshot.error}'),
+                );
+              }
 
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Available Cars",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        "Long term and short term",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      color: MyColor.yellow,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                    ),
-                    height: 50,
-                    width: 50,
-                    child: const Center(
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+              var rooms = snapshot.data!.docs;
+              return ListView(
+                children: rooms.map((room) {
+                  var data = room.data() as Map<String, dynamic>;
+                  return MyRoomsBox(
+                    title: data['name'],
+                    subTitle: data['type'],
+                  );
+                }).toList(),
+              );
+            },
+          )),
+
+          // const MyRoomsBox(
+          //   title: 'Ruang Teori 1',
+          //   subTitle: 'Classroom',
+          // ),
         ],
       ),
     );
