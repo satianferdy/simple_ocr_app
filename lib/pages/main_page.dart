@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:simple_ocr_app/components/bottom_nav_bar.dart';
 import 'package:simple_ocr_app/components/my_drawer.dart';
+import 'package:simple_ocr_app/pages/boking_page.dart';
 import 'package:simple_ocr_app/pages/home_page.dart';
 import 'package:simple_ocr_app/pages/notif_page.dart';
 import 'package:simple_ocr_app/pages/profile_page.dart';
-import 'package:simple_ocr_app/pages/workplace_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -28,16 +28,16 @@ class _MainPageState extends State<MainPage> {
   // pages to display
   final List<Widget> pages = [
     // home page
-    HomePage(),
+    const HomePage(),
 
     // workplace page
-    const WorkplacePage(),
+    const BokingPage(),
 
     // notif page
     const NotifPage(),
 
     // profile page
-    const ProfilePage(),
+    ProfilePage(),
   ];
 
   @override

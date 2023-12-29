@@ -4,7 +4,7 @@ import 'package:simple_ocr_app/components/my_rooms_box.dart';
 import 'package:simple_ocr_app/helper/my_color.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   // firebase auth instance
   // final FirebaseAuth auth = FirebaseAuth.instance;
@@ -87,8 +87,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 10),
 
           // rooms box
-          Expanded(
-              child: StreamBuilder<QuerySnapshot>(
+          StreamBuilder(
             stream: FirebaseFirestore.instance.collection('rooms').snapshots(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -96,29 +95,40 @@ class HomePage extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               }
-              if (snapshot.hasError) {
-                return Center(
-                  child: Text('Error: ${snapshot.error}'),
+
+              // get all data rooms
+              final rooms = snapshot.data!.docs;
+
+              if (snapshot.data == null || rooms.isEmpty) {
+                return const Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(25.0),
+                    child: Text('No rooms found... fill something!'),
+                  ),
                 );
               }
 
-              var rooms = snapshot.data!.docs;
-              return ListView(
-                children: rooms.map((room) {
-                  var data = room.data() as Map<String, dynamic>;
-                  return MyRoomsBox(
-                    title: data['name'],
-                    subTitle: data['type'],
-                  );
-                }).toList(),
+              // return list view rooms
+              return Expanded(
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    // get individual room data
+                    final room = rooms[index];
+
+                    // get rooms data from each rooms
+                    String name = room['name'];
+                    String type = room['type'];
+
+                    return MyRoomsBox(
+                      title: name,
+                      subTitle: type,
+                    );
+                  },
+                  itemCount: rooms.length,
+                ),
               );
             },
-          )),
-
-          // const MyRoomsBox(
-          //   title: 'Ruang Teori 1',
-          //   subTitle: 'Classroom',
-          // ),
+          ),
         ],
       ),
     );
